@@ -1,0 +1,15 @@
+name: Deploy Database
+on:
+  repository_dispatch:
+    types: [deploy-db]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Deploy Database
+        run: |
+          echo "Deploying database..."
+          # Add deployment steps here, e.g., SQL commands or AWS RDS CLI commands.
